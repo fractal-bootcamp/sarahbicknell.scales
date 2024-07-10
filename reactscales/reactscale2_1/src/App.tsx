@@ -1,15 +1,22 @@
 import { useState } from 'react'
 
-function InputField({placeholder, value, onChange, error} : {placeholder: string, value: string, error: string, onChange: (value: string) => void}) {
+type InputFieldProps = {
+  placeholder: string,
+  value: string,
+  onChange: (value: string) => void,
+  error: string
+}
+
+function InputField(props: InputFieldProps) {
   
   return(
     <div>
       <input 
         type="text" 
-        placeholder={placeholder} 
-        value={value} 
-        onChange={(event) => onChange(event.target.value)}/>
-        {error && <p> Error: {error} </p>}
+        placeholder={props.placeholder} 
+        value={props.value} 
+        onChange={(event) => props.onChange(event.target.value)}/>
+        {props.error && <p> Error: {props.error} </p>}
     </div>
   )
 }
