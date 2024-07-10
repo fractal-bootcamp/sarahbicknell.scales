@@ -41,7 +41,7 @@ function App() {
 
   return (
     <>
-    <h1>Props&Comps</h1>
+    <h1>Props&&Comps</h1>
     <InputField value={input} onChange={setInput} /> 
     <button onClick={handle} > Clicky </button>
     {getInput && <ShowText text={getInput} /> }
